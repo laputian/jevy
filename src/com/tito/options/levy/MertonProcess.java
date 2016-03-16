@@ -68,7 +68,7 @@ public class MertonProcess {
 	}
 	
 	public double getKappa() {
-		return stDev;
+		return kappa;
 	}
 	
 	public MertonJumpFactory getMertonJumpFactory(){

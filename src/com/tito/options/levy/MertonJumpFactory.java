@@ -1,7 +1,7 @@
 package com.tito.options.levy;
 
-import org.apache.commons.math3.distribution.PoissonDistribution;
 import org.apache.commons.math3.distribution.NormalDistribution;
+import org.apache.commons.math3.distribution.PoissonDistribution;
 
 public class MertonJumpFactory {
 	

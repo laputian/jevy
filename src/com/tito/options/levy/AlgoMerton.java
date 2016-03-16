@@ -2,15 +2,11 @@ package com.tito.options.levy;
 
 import java.util.Random;
 
-import com.tito.options.first.Option;
-
 //Matsuda - Introduction to Merton Jump Diffusion Model 
 
 public class AlgoMerton {
 	
 	private int numTry;
-	private int numStep;
-	
 	
 	public AlgoMerton(int numTry){
 		
