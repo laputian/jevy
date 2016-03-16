@@ -1,7 +1,3 @@
-package com.tito.options.first;
-
-import java.util.Random;
-
 /**
  * Copyright 2016 the original author or authors.
  * 
@@ -16,6 +12,11 @@ import java.util.Random;
  * See the License for the specific language governing permissions and
  * limitations under the License.
 **/
+package com.tito.options.bs;
+
+import java.util.Random;
+
+
 public class Algo {
 	
 	//Bergström - Pricing American Options using Lévy Processes ... - 

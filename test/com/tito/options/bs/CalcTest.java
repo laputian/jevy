@@ -12,28 +12,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 **/
-package com.tito.options.levy;
+package com.tito.options.bs;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
 
 import org.junit.Test;
 
-public class CalcMertonTest {
+import com.tito.options.bs.Algo;
+import com.tito.options.bs.Option;
+
+
+public class CalcTest {
 	
-	int numStep=10000;
-	double optionTime = 0.5;
-	private AlgoMerton algoMerton = new AlgoMerton(100);
-	private SimpleOption so = new SimpleOption(40, 42, optionTime);
-	private MertonProcess mp = new MertonProcess(optionTime/numStep, 0.003, 0.2, 1, 0.5, 0.1);
+	private Option option = new Option(40, 42, 0.5 , 0.1, 0.2);
+	private Algo algo = new Algo(100, 1000000);
 	private Random rn = new Random();
 	
 	@Test
 	public void calcTest(){
 		
-		assertTrue(algoMerton.calcPath(so, mp, rn, numStep) > 0);
+		assertTrue(algo.calcPath(option, rn) > 0);
 
 	}
+	
+	@Test
+	public void discountTest(){
+		
+		assertTrue(algo.discount(algo.calcPath(option, rn), option) >= 0);
+
+	}
+	
+	@Test
+	public void calcOptionPriceTest(){
+		
+		assertEquals(4.76, algo.calcOptionPrice(option, rn), 0.01);
+		
+	}
+	
 
 }

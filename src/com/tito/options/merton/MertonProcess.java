@@ -1,4 +1,4 @@
-package com.tito.options.levy;
+package com.tito.options.merton;
 
 public class MertonProcess {
 		
@@ -23,7 +23,9 @@ public class MertonProcess {
 		this.mean = mean;
 		this.stDev = stDev;
 		this.kappa = Math.exp(mean + 0.5 * stDev * stDev) - 1;
-		this.mertonJumpFactory = new MertonJumpFactory(intensity * timeFraction, mean, stDev);
+		double reg = intensity * timeFraction;
+		this.mertonJumpFactory = new MertonJumpFactory(reg, mean, stDev);
+
 	}
 	
 	public double getTimeFraction() {
@@ -54,13 +56,7 @@ public class MertonProcess {
 	public void setMean(double mean) {
 		this.mean = mean;
 	}
-	public double getVariance() {
-		return stDev;
-	}
-	public void setVariance(double variance) {
-		this.stDev = variance;
-	}
-	public double getStDev() {
+	double getStDev() {
 		return stDev;
 	}
 	public void setStDev(double stDev) {

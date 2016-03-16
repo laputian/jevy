@@ -12,11 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 **/
-package com.tito.options.first;
+package com.tito.options.bs;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.tito.options.bs.BlackScholesFormula;
+import com.tito.options.bs.Option;
 
 public class BlackScholesFormulaTest {
 	

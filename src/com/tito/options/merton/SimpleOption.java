@@ -1,4 +1,4 @@
-package com.tito.options.levy;
+package com.tito.options.merton;
 
 public class SimpleOption {
 	

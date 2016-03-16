@@ -1,4 +1,4 @@
-package com.tito.options.levy;
+package com.tito.options.merton;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.distribution.PoissonDistribution;
@@ -9,7 +9,9 @@ public class MertonJumpFactory {
 	private NormalDistribution nr;
 	
 	public MertonJumpFactory(double lambda, double nrMean, double nrVariance){
-		ps = new PoissonDistribution(lambda);
+		if (lambda > 0){
+			ps = new PoissonDistribution(lambda);
+		} 
 		nr = new NormalDistribution(nrMean, nrVariance);
 	}
 	
@@ -18,8 +20,8 @@ public class MertonJumpFactory {
 	}
 	
 	public double getJump(){
-		
-		if (ps.sample() > 0){
+			
+		if (ps != null && ps.sample() > 0){
 			return nr.sample();
 		}
 		
