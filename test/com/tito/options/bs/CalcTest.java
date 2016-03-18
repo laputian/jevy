@@ -34,7 +34,7 @@ public class CalcTest {
 	@Test
 	public void calcTest(){
 		
-		assertTrue(algo.calcPath(option, rn) > 0);
+		assertTrue(algo.calcPath(option, rn) >= 0);
 
 	}
 	

@@ -42,7 +42,7 @@ public class Algo {
 			i++;
 		}
 		
-		return step;
+		return Math.max(0, step - option.getStrikePrice());
 	}
 	
 	public double discount(double endValue, Option option){
@@ -58,11 +58,11 @@ public class Algo {
 		int i = 0;
 		double tot = 0;
 		while (i < numTry){
-			tot = tot + discount(calcPath(option, rn),option);
+			tot = tot + calcPath(option, rn);
 			i++;
 		}
 		
-		return tot/numTry ;
+		return tot*Math.exp(-option.getRfInterest()*option.getTime())/numTry ;
 		
 	}
 	

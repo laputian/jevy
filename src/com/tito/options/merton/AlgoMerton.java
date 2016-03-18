@@ -24,7 +24,7 @@ public class AlgoMerton {
 			i++;
 		}
 		
-		return step;
+		return Math.max(0, step - option.getStrike());
 	}
 	
 	public double discount(double endValue, SimpleOption option, MertonProcess mp){
@@ -40,11 +40,11 @@ public class AlgoMerton {
 			int i = 0;
 			double tot = 0;
 			while (i < numTry){
-				tot = tot + discount(calcPath(option, mp, rn, numStep),option, mp);
+				tot = tot + calcPath(option, mp, rn, numStep);
 				i++;
 			}
 			
-			return tot/numTry ;
+			return tot*Math.exp(-mp.getDrift()*option.getTime())/numTry ;
 			
 		}
 	

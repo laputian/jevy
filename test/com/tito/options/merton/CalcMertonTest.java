@@ -39,7 +39,7 @@ public class CalcMertonTest{
 	@Test
 	public void calcTest(){
 		
-		assertTrue(algoMerton.calcPath(so, mp, rn, numStep) > 0);
+		assertTrue(algoMerton.calcPath(so, mp, rn, numStep) >= 0);
 
 	}
 	
