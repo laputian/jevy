@@ -1,5 +1,3 @@
-package com.tito.options.bs;
-
 /**
  * Copyright 2016 the original author or authors.
  * 
@@ -14,6 +12,8 @@ package com.tito.options.bs;
  * See the License for the specific language governing permissions and
  * limitations under the License.
 **/
+package com.tito.options.bs;
+
 public class BlackScholesFormula {
 	
 	//Hull 4th ed. 11.6
